@@ -64,7 +64,3 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
-
-ruby '2.4.3'
-
-
