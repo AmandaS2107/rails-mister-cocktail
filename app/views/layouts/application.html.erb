@@ -15,10 +15,9 @@
   <body>
     <div class="navbar-wagon">
       <!-- Logo -->
-      <a href="/" class="navbar-wagon-brand">
-        <img src="images/logo.png" alt="logo">
-      </a>
-
+      <div class="navbar-wagon-brand">
+      <%= link_to(image_tag("/assets/logo.jpg", :alt => "logo", :title => "Home"), "/") %>
+      </div>
       <!-- Right Navigation -->
       <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -31,7 +30,7 @@
         <!-- Profile picture with dropdown list -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <img src="" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><a href="#">Profile</a></li>
               <li><a href="#">Dashboard</a></li>
@@ -62,6 +61,7 @@
         <a class="btn btn-primary btn-lg">Pick a Drink</a>
       </div>
     </div>
+
 
 
     <%= yield %>
