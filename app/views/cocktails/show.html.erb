@@ -1,13 +1,24 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<h1>Cocktail Details</h1>
 
 <h2><%= @cocktail.name %></h2>
 
 <% @doses.each do |dose| %>
-<%= dose.name %>
+<%= dose.description %>
+<%= dose.ingredient.name %>
+<%= link_to "Delete", cocktail_dose_path(@cocktail, dose),method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
 <br>
 <% end %>
 
+<br>
+<br>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient, as: :select %>
+  <%= f.input :description %>
+  <%= f.button :submit, "Add", class: 'btn btn-info' %>
+<% end %>
+<br>
+<br>
 
 
 <%= link_to "Go back to Cocktail List", cocktails_path %>

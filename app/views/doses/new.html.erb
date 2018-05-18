@@ -1,13 +1,12 @@
 <h1>Add a new dose to existing cocktails </h1>
 
-<%= simple_form_for [@cocktail, @ingredient] do |f| %>
-         <!-- <%= f.input cocktail.[:name], placeholder: 'Pick existing cocktail', label: false %> -->
-          <%= f.input :name, collection: Cocktail.all  %>
-<!-- or this one <%= f.association #collection: Cocktail.all %> -->
-          <%= f.submit 'Add a new plant to your garden', class: 'btn btn-info' %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient, as: :select %>
+  <%= f.input :description %>
+  <%= f.button :submit, "Add", class: 'btn btn-info' %>
 <% end %>
 
 <!--
-# Pick existing cocktail ((>> Dropdown))
+# Pick existing ingredient((>> Dropdown))
 # user can add a new dose (ingredient/description pair)
 -->
